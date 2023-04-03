@@ -31,27 +31,65 @@ const Main = (props) => {
           </button>
         </div>
       </ShareBox>
-      <Article>
-        <SharedActor>
-          <a>
-            <img src="/images/user.svg" alt="user" />
-            <div>
-              <span>Title</span>
-              <span>Info</span>
-              <span>Date</span>
-            </div>
-          </a>
-          <button>
-            <img src="/images/ellipsis.svg" alt="ellipsis" />
-          </button>
-        </SharedActor>
-        <Description>Description</Description>
-        <SharedImg>
-          <a>
-            <img src="/images/lead-tracker.png" alt="shared" />
-          </a>
-        </SharedImg>
-      </Article>
+      <div>
+        <Article>
+          <SharedActor>
+            <a>
+              <img src="/images/user.svg" alt="user" />
+              <div>
+                <span>Title</span>
+                <span>Info</span>
+                <span>Date</span>
+              </div>
+            </a>
+            <button>
+              <img src="/images/ellipsis.svg" alt="ellipsis" />
+            </button>
+          </SharedActor>
+          <Description>Description</Description>
+          <SharedImg>
+            <a>
+              <img src="/images/lead-tracker.png" alt="shared" />
+            </a>
+          </SharedImg>
+          <SocialCounts>
+            <li>
+              <button>
+                <img
+                  src="https://static-exp1.licdn.com/sc/h/d310t2g24pvdy4pt1jkedo4yb"
+                  alt="like"
+                />
+                <img
+                  src="https://static-exp1.licdn.com/sc/h/5thsbmikm6a8uov24ygwd914f"
+                  alt="like"
+                />
+                <span>75</span>
+              </button>
+            </li>
+            <li>
+              <a>5 comments</a>
+            </li>
+          </SocialCounts>
+          <SocialActions>
+            <button>
+              <img src="/images/likelike.svg" alt="LinkedinLike" />
+              <span>Like</span>
+            </button>
+            <button>
+              <img src="/images/comment.svg" alt="Comments" />
+              <span>Comments</span>
+            </button>
+            <button>
+              <img src="/images/repost.svg" alt="Share" />
+              <span>Share</span>
+            </button>
+            <button>
+              <img src="/images/send.svg" alt="Send" />
+              <span>Send</span>
+            </button>
+          </SocialActions>
+        </Article>
+      </div>
     </Container>
   );
 };
@@ -199,6 +237,46 @@ const SharedImg = styled.div`
     object-fit: contain;
     width: 100%;
     height: 100%;
+  }
+`;
+
+const SocialCounts = styled.ul`
+  line-height: 1.3;
+  display: flex;
+  align-items: flex-start;
+  overflow: auto;
+  margin: 0 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid #e9e5df;
+  list-style: none;
+  li {
+    margin-left: 5px;
+    font-size: 12px;
+    button {
+      display: flex;
+    }
+  }
+`;
+
+const SocialActions = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  min-height: 40px;
+  padding: 4px 8px;
+  button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px;
+    color: #0a66c2;
+    border: none;
+    background-color: transparent;
+    @media (min-width: 768px) {
+      span {
+        margin-left: 8px;
+      }
+    }
   }
 `;
 export default Main;
