@@ -44,6 +44,7 @@ export function SignOutApi() {
   };
 }
 
+//got error 403 anytime i want post
 export function postArticleAPI(payload) {
   return (dispatch) => {
     if (payload.image != "") {
@@ -56,15 +57,26 @@ export function postArticleAPI(payload) {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
 
-          console.log(`Progress: $(progress)%`);
+          console.log(`Progress: ${progress}%`);
           if (snapshot.state === "RUNNING") {
-            console.log(`Progress: $(progress)%`);
+            console.log(`Progress: ${progress}%`);
           }
         },
         (error) => console.log(error.code),
         async () => {
           const downloadURL = await upload.snapshot.ref.getDownloadURL();
-          db.collection("articles").add({})
+          db.collection("articles").add({
+            actor: {
+              description: payload.user.email,
+              title: payload.user.displayName,
+              date: payload.timestamp,
+              image: payload.user.photoURL,
+            },
+            video: payload.video,
+            sharedImg: downloadURL,
+            comments: 0,
+            description: payload.description,
+          });
         }
       );
     }
