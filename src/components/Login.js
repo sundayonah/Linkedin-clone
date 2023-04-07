@@ -21,11 +21,11 @@ const Login = (props) => {
       <Section>
         <Hero>
           <h1>Welcome to your professional community</h1>
-          <img src="/images/login-hero.svg" alt="" />
+          <img src="/images/login-hero.svg" alt="login-hero" />
         </Hero>
         <Form>
           <Google onClick={() => props.signIn()}>
-            <img src="/images/google.svg" alt="" />
+            <img src="/images/google.svg" alt="google" />
             Sign in with Google
           </Google>
         </Form>
