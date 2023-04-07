@@ -119,6 +119,7 @@ export function getArticleAPI() {
       .onSnapshot((snapshot) => {
         payload = snapshot.docs.map((doc) => doc.data());
         dispatch(getArticles(payload));
+        console.log(payload, "payyyyyy");
       });
   };
 }
