@@ -10,6 +10,7 @@ import { connect, Connect } from "react-redux";
 const Home = (props) => {
   return (
     <Container>
+      
       {!props.user && <Navigate to="/" />}
       <Header />
       <Section>
