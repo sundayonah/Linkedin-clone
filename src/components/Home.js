@@ -5,12 +5,11 @@ import Rightside from "../components/RightSide";
 import Header from "./Header";
 
 import { Navigate } from "react-router-dom";
-import { connect, Connect } from "react-redux";
+import { connect } from "react-redux";
 
 const Home = (props) => {
   return (
     <Container>
-      
       {!props.user && <Navigate to="/" />}
       <Header />
       <Section>
